@@ -10,64 +10,53 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Dept;
-import model.Emp;
+import model.Groups;
 
 /**
  *
- * @author Ngo Tung Son
+ * @author win
  */
-public class EmpDBContext extends DBContext<Emp> {
+public class GroupsDBContext extends DBContext<Groups>{
 
-    public ArrayList<Emp> search(int did) {
-        ArrayList<Emp> emps = new ArrayList<>();
+     public ArrayList<Groups> list() {
+        ArrayList<Groups> groupss = new ArrayList<>();
         try {
-            String sql = "SELECT eid,ename,gender,dob,d.did,d.dname FROM Emp e INNER JOIN Dept d\n"
-                    + "ON e.did = d.did WHERE d.did = ?";
+            String sql = "SELECT gid,gname from Groups";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setInt(1, did);
             ResultSet rs = stm.executeQuery();
-            while (rs.next()) {
-                Emp e = new Emp();
-                e.setEid(rs.getInt("eid"));
-                e.setEname(rs.getString("ename"));
-                e.setGender(rs.getBoolean("gender"));
-                e.setDob(rs.getDate("dob"));
-                Dept d = new Dept();
-                d.setDid(rs.getInt("did"));
-                d.setDname(rs.getString("dname"));
-                e.setDept(d);
-                emps.add(e);
+            while(rs.next())
+            {
+                
+               Groups g = new Groups();
+                g.setGid(rs.getInt("gid"));
+                g.setGname(rs.getString("gname"));
+                groupss.add(g);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(EmpDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GroupsDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return emps;
+        return groupss;
     }
+   
 
     @Override
-    public ArrayList<Emp> list() {
+    public Groups get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Emp get(int id) {
+    public void insert(Groups model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insert(Emp model) {
+    public void update(Groups model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Emp model) {
+    public void delete(Groups model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-    @Override
-    public void delete(Emp model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
 }

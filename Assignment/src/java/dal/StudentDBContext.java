@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
-import model.Group;
+import model.Groups;
 import model.Student;
 
 /**
@@ -22,8 +22,8 @@ public class StudentDBContext extends DBContext<Student>{
      public ArrayList<Student> search(int did) {
         ArrayList<Student> stus = new ArrayList<>();
         try {
-            String sql = "SELECT eid,ename,gender,dob,d.did,d.dname FROM Emp e INNER JOIN Dept d\n"
-                    + "ON e.did = d.did WHERE d.did = ?";
+            String sql = "SELECT sid,simage,scode,sname,g.gid,g.gname FROM Student s INNER JOIN Groups g\n" +
+"                     ON s.gid = g.gid WHERE g.gid = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, did);
             ResultSet rs = stm.executeQuery();
@@ -34,7 +34,7 @@ public class StudentDBContext extends DBContext<Student>{
                 s.setSimage(rs.getString("simage"));
                 s.setScode(rs.getString("scode"));
                 s.setSname(rs.getString("name"));
-                Group g = new Group();
+                Groups g = new Groups();
                 g.setGid(rs.getInt("gid"));
                 g.setGname(rs.getString("gname"));
                 s.setGroup(g);

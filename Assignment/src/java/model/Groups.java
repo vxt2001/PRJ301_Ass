@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author win
  */
-public class Group {
+public class Groups {
      private int gid;
     private String gname;
     private ArrayList<Student> studs = new ArrayList<>();
