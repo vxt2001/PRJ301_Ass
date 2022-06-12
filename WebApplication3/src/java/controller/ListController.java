@@ -77,12 +77,11 @@ public class ListController extends HttpServlet {
         int suid = Integer.parseInt(request.getParameter("suid"));
         StudentDBContext dbStu = new StudentDBContext();
         ArrayList<Student> stus = dbStu.search(suid);
-        
         request.setAttribute("stus", stus);
+        
          SubjectDBContext dbSub = new SubjectDBContext();
         ArrayList<Subject> subjects = dbSub.list();
         request.setAttribute("subjects", subjects);
-        
         request.setAttribute("suid", suid);
         request.getRequestDispatcher("list.jsp").forward(request, response);
     }

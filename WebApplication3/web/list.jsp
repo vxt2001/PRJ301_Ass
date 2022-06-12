@@ -14,8 +14,8 @@
     </head>
     <body>
         <form action="list" method="POST">
-            Department:<select name="gid"> 
-                <c:forEach items="${requestScope.groupss}" var="su">
+            Department:<select name="suid"> 
+                <c:forEach items="${requestScope.subjects}" var="su">
                     <option 
                         <c:if test="${su.suid eq requestScope.suid}">
                             selected="selected"
@@ -37,10 +37,10 @@
                 <c:forEach items="${requestScope.stus}" var="s">
                     <tr>
                         <td>${s.sid}</td>
+                        <td>${s.simage}</td>
+                        <td>${s.scode}</td>
                         <td>${s.sname}</td>
-                        <td>${s.gender}</td>
-                        <td>${s.dob}</td>
-                        <td>${s.groupss.suname}</td>
+                        <td>${s.subject.suname}</td>
                     </tr>  
                 </c:forEach>
             </table>
