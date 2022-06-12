@@ -5,7 +5,7 @@
 
 package controller;
 
-import dal.GroupsDBContext;
+import dal.SubjectDBContext;
 import dal.StudentDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import model.Groups;
+import model.Subject;
 import model.Student;
 
 /**
@@ -58,9 +58,9 @@ public class ListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        GroupsDBContext db = new GroupsDBContext();
-        ArrayList<Groups> groupss = db.list();
-        request.setAttribute("groupss", groupss);
+        SubjectDBContext db = new SubjectDBContext();
+        ArrayList<Subject> subjects = db.list();
+        request.setAttribute("subjects", subjects);
         request.getRequestDispatcher("list.jsp").forward(request, response);
     } 
 
@@ -74,16 +74,16 @@ public class ListController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        int gid = Integer.parseInt(request.getParameter("gid"));
+        int suid = Integer.parseInt(request.getParameter("suid"));
         StudentDBContext dbStu = new StudentDBContext();
-        ArrayList<Student> stus = dbStu.search(gid);
+        ArrayList<Student> stus = dbStu.search(suid);
         
         request.setAttribute("stus", stus);
-         GroupsDBContext dbGr = new GroupsDBContext();
-        ArrayList<Groups> groupss = dbGr.list();
-        request.setAttribute("groupss", groupss);
+         SubjectDBContext dbSub = new SubjectDBContext();
+        ArrayList<Subject> subjects = dbSub.list();
+        request.setAttribute("subjects", subjects);
         
-        request.setAttribute("gid", gid);
+        request.setAttribute("suid", suid);
         request.getRequestDispatcher("list.jsp").forward(request, response);
     }
 

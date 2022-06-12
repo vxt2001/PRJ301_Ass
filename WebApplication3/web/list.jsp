@@ -15,12 +15,12 @@
     <body>
         <form action="list" method="POST">
             Department:<select name="gid"> 
-                <c:forEach items="${requestScope.groupss}" var="g">
+                <c:forEach items="${requestScope.groupss}" var="su">
                     <option 
-                        <c:if test="${g.gid eq requestScope.gid}">
+                        <c:if test="${su.suid eq requestScope.suid}">
                             selected="selected"
                         </c:if>
-                        value="${g.gid}">${g.gname}</option>
+                        value="${su.suid}">${su.suname}</option>
                 </c:forEach>
             </select>
             <input type="submit" value="Search"/>
@@ -40,7 +40,7 @@
                         <td>${s.sname}</td>
                         <td>${s.gender}</td>
                         <td>${s.dob}</td>
-                        <td>${s.groupss.gname}</td>
+                        <td>${s.groupss.suname}</td>
                     </tr>  
                 </c:forEach>
             </table>

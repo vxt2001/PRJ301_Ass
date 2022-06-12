@@ -10,52 +10,52 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Groups;
+import model.Subject;
 
 /**
  *
  * @author win
  */
-public class GroupsDBContext extends DBContext<Groups>{
+public class SubjectDBContext extends DBContext<Subject>{
 
-     public ArrayList<Groups> list() {
-        ArrayList<Groups> groupss = new ArrayList<>();
+     public ArrayList<Subject> list() {
+        ArrayList<Subject> subjects = new ArrayList<>();
         try {
-            String sql = "SELECT gid,gname from Groups";
+            String sql = "SELECT suid,suname from subject";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while(rs.next())
             {
                 
-               Groups g = new Groups();
-                g.setGid(rs.getInt("gid"));
-                g.setGname(rs.getString("gname"));
-                groupss.add(g);
+               Subject su = new Subject();
+                su.setSuid(rs.getInt("suid"));
+                su.setSuname(rs.getString("suname"));
+                subjects.add(su);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(GroupsDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SubjectDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return groupss;
+        return subjects;
     }
    
 
     @Override
-    public Groups get(int id) {
+    public Subject get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void insert(Groups model) {
+    public void insert(Subject model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Groups model) {
+    public void update(Subject model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void delete(Groups model) {
+    public void delete(Subject model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

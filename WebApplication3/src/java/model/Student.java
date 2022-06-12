@@ -15,7 +15,7 @@ public class Student {
     private String scode;
     private String sname;
 
-    private Groups group;
+    private Subject group;
 
     public int getSid() {
         return sid;
@@ -49,11 +49,11 @@ public class Student {
         this.sname = sname;
     }
 
-    public Groups getGroup() {
+    public Subject getGroup() {
         return group;
     }
 
-    public void setGroup(Groups group) {
+    public void setGroup(Subject group) {
         this.group = group;
     }
 
