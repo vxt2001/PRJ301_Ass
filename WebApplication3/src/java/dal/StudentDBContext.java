@@ -37,7 +37,7 @@ public class StudentDBContext extends DBContext<Student>{
                 Subject su = new Subject();
                 su.setSuid(rs.getInt("suid"));
                 su.setSuname(rs.getString("suname"));
-                s.setGroup(su);
+                s.setSubject(su);
                 stus.add(s);
             }
         } catch (SQLException ex) {

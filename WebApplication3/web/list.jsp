@@ -29,10 +29,10 @@
             <table>
                 <tr>
                     <td>Id</td>
+                    <td>Image</td>
+                    <td>Code</td>
                     <td>Name</td>
-                    <td>Gender</td>
-                    <td>Dob</td>
-                    <td>Dept Name</td>
+                    <td>Class</td>
                 </tr>
                 <c:forEach items="${requestScope.stus}" var="s">
                     <tr>
