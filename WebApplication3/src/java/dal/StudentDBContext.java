@@ -23,7 +23,7 @@ public class StudentDBContext extends DBContext<Student>{
         ArrayList<Student> stus = new ArrayList<>();
         try {
             String sql = "SELECT sid,simage,scode,sname,su.suid,su.suname FROM Student s INNER JOIN Subject su\n" +
-"                     ON s.sid = su.suid WHERE su.suid = ?";
+"                     ON s.sid = su.suid WHERE s.suid = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, did);
             ResultSet rs = stm.executeQuery();

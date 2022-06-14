@@ -33,6 +33,8 @@
                     <td>Code</td>
                     <td>Name</td>
                     <td>Class</td>
+                  
+                    
                 </tr>
                 <c:forEach items="${requestScope.stus}" var="s">
                     <tr>
@@ -41,9 +43,13 @@
                         <td>${s.scode}</td>
                         <td>${s.sname}</td>
                         <td>${s.subject.suname}</td>
+                    <td>  <input type="radio" name="diemdanh" value="attended" />attended</td>
+                     <td><input type="radio" name="diemdanh" value="absent" />absent</td>
                     </tr>  
                 </c:forEach>
+                    
             </table>
+            
         </c:if>    
     </body>
 </html>
