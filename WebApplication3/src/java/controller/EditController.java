@@ -107,6 +107,10 @@ public class EditController extends HttpServlet {
         s.setSubject(su);
         StudentDBContext db= new StudentDBContext();
          db.update(s);
+         
+         request.setAttribute("student", s);
+         request.setAttribute("action", "edited");
+          request.getRequestDispatcher("../view/emp/dml_confirmation.jsp").forward(request, response);
     }
 
     /**
