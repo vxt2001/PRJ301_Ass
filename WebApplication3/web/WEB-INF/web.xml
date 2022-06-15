@@ -4,9 +4,17 @@
         <servlet-name>ListController</servlet-name>
         <servlet-class>controller.ListController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditController</servlet-name>
+        <servlet-class>controller.EditController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListController</servlet-name>
         <url-pattern>/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditController</servlet-name>
+        <url-pattern>/edit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
