@@ -84,7 +84,29 @@ public class EditController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String raw_sid = request.getParameter("sid");
+        String raw_simage = request.getParameter("simage");
+        String raw_scode = request.getParameter("scode");
+        String raw_sname = request.getParameter("sname");
+        String raw_suid = request.getParameter("suid");
+        
+         int sid = Integer.parseInt(raw_sid);
+         String simage = raw_simage;
+        String scode = raw_scode;
+        String sname = raw_sname;
+        
+        int suid = Integer.parseInt(raw_suid);
+        
+        Student s = new Student();
+        s.setSid(sid);
+        s.setSimage(simage);
+        s.setSname(sname);
+        s.setSname(sname);
+        Subject su = new Subject();
+        su.setSuid(suid);
+        s.setSubject(su);
+        StudentDBContext db= new StudentDBContext();
+         db.update(s);
     }
 
     /**

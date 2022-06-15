@@ -43,6 +43,7 @@
                         <td>${s.scode}</td>
                         <td>${s.sname}</td>
                         <td>${s.subject.suname}</td>
+                         <td><a href="edit?id=${s.sid}">Edit</a></td>
                     <td>  <input type="radio" name="diemdanh" value="attended" />attended</td>
                      <td><input type="radio" name="diemdanh" value="absent" />absent</td>
                     </tr>  
