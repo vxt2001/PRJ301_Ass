@@ -14,7 +14,7 @@
     </head>
     <body>
         <form action="edit" method="POST">
-            Id: ${requestScope.emp.eid} <input type="hidden" value="${requestScope.emp.eid}" name="id"/> <Br/>
+            Id: ${requestScope.stu.eid} <input type="hidden" value="${requestScope.emp.eid}" name="id"/> <Br/>
             Name: <input type="text" value="${requestScope.emp.ename}" name="name"/> <Br/>
             Gender: <input type="radio" 
                            ${requestScope.emp.gender?"checked=\"checked\"":""}
