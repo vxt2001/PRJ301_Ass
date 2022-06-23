@@ -12,9 +12,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <h1>FPT University</h1>
     <body>
         <form action="list" method="POST">
-            Department:<select name="suid"> 
+            class
+            :<select name="suid"> 
                 <c:forEach items="${requestScope.subjects}" var="su">
                     <option 
                         <c:if test="${su.suid eq requestScope.suid}">
