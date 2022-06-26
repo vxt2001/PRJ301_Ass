@@ -13,7 +13,9 @@
         <title>JSP Page</title>
     </head>
     <h1>FPT University</h1>
+    
     <body>
+        <h2 text-align:center>Home</h2>
         <form action="list" method="POST">
             class
             :<select name="suid"> 
