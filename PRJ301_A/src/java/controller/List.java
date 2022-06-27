@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
+
 package controller;
 
 import dal.DiemDBContext;
+import dal.LopDBContext;
 import dal.SinhVienDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,49 +15,42 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import model.Diem;
+import model.Lop;
 import model.SinhVien;
 
 /**
  *
  * @author Admin
  */
-public class ListController extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
+public class List extends HttpServlet {
+   
+    /** 
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet ListController</title>");  
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet ListController at " + request.getContextPath () + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//            SinhVienDBContext dbsv = new SinhVienDBContext();
-//            ArrayList<SinhVien> sinhviens = dbsv.list();
-//            request.setAttribute("sinhviens", sinhviens);
-//            request.getRequestDispatcher("list.jsp").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet List</title>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet List at " + request.getContextPath () + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-    }
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
+    /** 
      * Handles the HTTP <code>GET</code> method.
-     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -63,22 +58,21 @@ public class ListController extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        SinhVienDBContext dbsv = new SinhVienDBContext();
-        ArrayList<SinhVien> sinhviens = dbsv.list();
-        request.setAttribute("sinhviens", sinhviens);
+    throws ServletException, IOException {
+//      SinhVienDBContext dbsv = new SinhVienDBContext();
+//        ArrayList<SinhVien> sinhviens = dbsv.list();
+//        request.setAttribute("sinhviens", sinhviens);
 
-        DiemDBContext dbd = new DiemDBContext();
-        ArrayList<Diem> diems = dbd.list();
-        request.setAttribute("diems", diems);
-
+        LopDBContext db = new LopDBContext();
+        ArrayList<Lop> lops = db.list();
+        request.setAttribute("lops", lops);
+        
+        request.getRequestDispatcher("list_1.jsp").forward(request, response);
        
-       // processRequest(request, response);
-    }
+    } 
 
-    /**
+    /** 
      * Handles the HTTP <code>POST</code> method.
-     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -86,24 +80,22 @@ public class ListController extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-         int idSV = Integer.parseInt(request.getParameter("idSV"));
-          SinhVienDBContext dbsv = new SinhVienDBContext();
+    throws ServletException, IOException {
+        int idLop = Integer.parseInt(request.getParameter("idLop"));
+             SinhVienDBContext dbsv = new SinhVienDBContext();
         ArrayList<SinhVien> sinhviens = dbsv.list();
         request.setAttribute("sinhviens", sinhviens);
-        
-        DiemDBContext dbd = new DiemDBContext();
-        ArrayList<Diem> diems = dbd.list();
-        request.setAttribute("diems", diems);
-         request.setAttribute("idSV", idSV);
-       
-       // processRequest(request, response);
 
+        LopDBContext dbl = new LopDBContext();
+        ArrayList<Lop> lops = dbl.list();
+        request.setAttribute("lops", lops);
+        request.setAttribute("idLop", idLop);
+        
+        request.getRequestDispatcher("list_1.jsp").forward(request, response);
     }
 
-    /**
+    /** 
      * Returns a short description of the servlet.
-     *
      * @return a String containing servlet description
      */
     @Override

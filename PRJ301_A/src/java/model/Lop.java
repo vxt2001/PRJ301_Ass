@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Admin
@@ -12,6 +14,8 @@ public class Lop {
     int idLop ;
     String MaLop;
     String TenLop;
-    String MaKhoa;
-    String MaKhoaHoc;
+    
+   
+    private ArrayList<SinhVien> sinhviens = new ArrayList<>();
+   
 }

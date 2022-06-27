@@ -73,6 +73,7 @@ public class ListController extends HttpServlet {
         request.setAttribute("subjects", subjects);
         request.setAttribute("suid", suid);
         request.getRequestDispatcher("list.jsp").forward(request, response);
+        request.getRequestDispatcher("quanli.jsp").forward(request, response);
     }
 
     /** 

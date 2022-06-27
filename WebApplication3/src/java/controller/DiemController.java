@@ -5,7 +5,6 @@
 package controller;
 
 import dal.DiemDBContext;
-import dal.SinhVienDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -14,13 +13,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import model.Diem;
-import model.SinhVien;
 
 /**
  *
  * @author Admin
  */
-public class ListController extends HttpServlet {
+public class DiemController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,20 +33,20 @@ public class ListController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
+            /* TODO output your page here. You may use following sample code. */
 //            out.println("<!DOCTYPE html>");
 //            out.println("<html>");
 //            out.println("<head>");
-//            out.println("<title>Servlet ListController</title>");  
+//            out.println("<title>Servlet DiemController</title>");  
 //            out.println("</head>");
 //            out.println("<body>");
-//            out.println("<h1>Servlet ListController at " + request.getContextPath () + "</h1>");
+//            out.println("<h1>Servlet DiemController at " + request.getContextPath () + "</h1>");
 //            out.println("</body>");
 //            out.println("</html>");
-//            SinhVienDBContext dbsv = new SinhVienDBContext();
-//            ArrayList<SinhVien> sinhviens = dbsv.list();
-//            request.setAttribute("sinhviens", sinhviens);
-//            request.getRequestDispatcher("list.jsp").forward(request, response);
+            DiemDBContext db = new DiemDBContext();
+            ArrayList<Diem> diems = db.list();
+            request.setAttribute("diems", diems);
+            request.getRequestDispatcher("quanli.jsp").forward(request, response);
         }
     }
 
@@ -64,16 +62,7 @@ public class ListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        SinhVienDBContext dbsv = new SinhVienDBContext();
-        ArrayList<SinhVien> sinhviens = dbsv.list();
-        request.setAttribute("sinhviens", sinhviens);
-
-        DiemDBContext dbd = new DiemDBContext();
-        ArrayList<Diem> diems = dbd.list();
-        request.setAttribute("diems", diems);
-
-       
-       // processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -87,18 +76,7 @@ public class ListController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         int idSV = Integer.parseInt(request.getParameter("idSV"));
-          SinhVienDBContext dbsv = new SinhVienDBContext();
-        ArrayList<SinhVien> sinhviens = dbsv.list();
-        request.setAttribute("sinhviens", sinhviens);
-        
-        DiemDBContext dbd = new DiemDBContext();
-        ArrayList<Diem> diems = dbd.list();
-        request.setAttribute("diems", diems);
-         request.setAttribute("idSV", idSV);
-       
-       // processRequest(request, response);
-
+        processRequest(request, response);
     }
 
     /**

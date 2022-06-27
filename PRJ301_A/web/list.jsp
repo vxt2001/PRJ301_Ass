@@ -20,17 +20,17 @@
                 <td>Code</td>
                 <td>Name</td>
                 <td>Class</td>
+                <td></td>
+                <td></td>
 
 
             </tr>
-            <c:forEach items="${requestScope.sinhviens}" var="sv">
+           
+            <c:forEach items="${requestScope.sinhviens}" var="sinhvien">
                 <tr>
-                    <td>${sv.idSV}</td>
-                    <td>${sv.MaSV}</td>
-                    <td>${sv.TenSV}</td>
-                    <td>${sv.GioiTinh}</td>
-                    <td>${sv.NgaySinh}</td>
-
+                    <td>${sinhvien.idSV}</td>
+                   
+                   
 
                     <td>  <input type="radio" name="diemdanh" value="attended" />attended</td>
                     <td><input type="radio" name="diemdanh" value="absent" />absent</td>

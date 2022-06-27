@@ -12,28 +12,26 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <h1>FPT University Academic Portal</h1>
+    <h1>FPT University</h1>
     
     <body>
-        <h2 ><a href="">Home</a></h2>
-       <center> <form  action="list" method="POST">
+        <h2 text-align:center>Home</h2>
+        <form action="list1" method="POST">
             class
-            :<select name="suid"> 
-                <c:forEach items="${requestScope.subjects}" var="su">
+            :<select name="idLop"> 
+                <c:forEach items="${requestScope.lops}" var="lo">
                     <option 
-                        <c:if test="${su.suid eq requestScope.suid}">
+                        <c:if test="${lo.suid eq requestScope.idLop}">
                             selected="selected"
                         </c:if>
-                        value="${su.suid}">${su.suname}</option>
+                        value="${lo.idLop}">${lo.MaLop}</option>
                 </c:forEach>
             </select>
             <input type="submit" value="Search"/>
-            
         </form>
-           </center>
-        <c:if test="${requestScope.stus ne null}">
-            <table >
-                <tr style="background-color:#0d6efd">
+        <c:if test="${requestScope.sinhviens ne null}">
+            <table>
+                <tr>
                     <td>Id</td>
                     <td>Image</td>
                     <td>Code</td>
@@ -42,15 +40,16 @@
                   
                     
                 </tr>
-                <c:forEach items="${requestScope.stus}" var="s">
+                <c:forEach items="${requestScope.sinhviens}" var="s">
                     <tr>
-                        <td>${s.sid}</td>
+                        <td>${s.idSV}</td>
                         <td>${s.simage}</td>
-                        <td>${s.scode}</td>
-                        <td><a href="diem">${s.sname}</a></td>
+                        <td>${s.MaSV}</td>
+                        <td>${s.TenSV}</td>
+                        
                         <td>${s.subject.suname}</td>
                          <td><a href="edit?id=${s.sid}">Edit</a></td>
-                    <td>  <a href="diem">Nhap diem</a></td>
+                    <td>  <input type="radio" name="diemdanh" value="attended" />attended</td>
                      <td><input type="radio" name="diemdanh" value="absent" />absent</td>
                     </tr>  
                 </c:forEach>
