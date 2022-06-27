@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Diem;
 import model.SinhVien;
 
 /**
@@ -29,7 +30,7 @@ public class SinhVienDBContext extends DBContext<SinhVien> {
 //            while (rs.next()) {
 //                SinhVien s = new SinhVien();
 //
-//                s.setSid(rs.getInt("sid"));
+//                s.set(rs.getInt("sid"));
 //                s.setSimage(rs.getString("simage"));
 //                s.setScode(rs.getString("scode"));
 //                s.setSname(rs.getString("sname"));
@@ -46,24 +47,31 @@ public class SinhVienDBContext extends DBContext<SinhVien> {
 //    }
     @Override
     public ArrayList<SinhVien> list() {
-        ArrayList<Subject> subjects = new ArrayList<>();
+        ArrayList<SinhVien> sinhviens = new ArrayList<>();
+
         try {
-            String sql = "SELECT sv.idSV,MaSV,TenSV,GioiTinh,NgaySinh,idLop,MaMH,HocKy,DiemLan1,DiemLan2 FROM SinhVien sv inner JOIN  Diem d \n"
-                    + " \n"
-                    + "ON d.idSV = sv.idSV";
+//            String sql = "SELECT sv.idSV,MaSV,TenSV,GioiTinh,NgaySinh,idLop,MaMH,HocKy,DiemLan1,DiemLan2 FROM SinhVien sv inner JOIN  Diem d \n"
+//                    + " ON d.idSV = sv.idSV";
+            String sql = "SELECT idSV,MaSV,TenSV,GioiTinh,NgaySinh FROM SinhVien";
+
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
 
-                Subject su = new Subject();
-                su.setSuid(rs.getInt("suid"));
-                su.setSuname(rs.getString("suname"));
-                subjects.add(su);
+                SinhVien sv = new SinhVien();
+
+                sv.setIdSV(rs.getInt("idSV"));
+                sv.setMaSV(rs.getString("MaSV"));
+                sv.setTenSV(rs.getString("TenSV"));
+                sv.setGioiTinh(rs.getBoolean("GioiTinh"));
+                sv.setNgaySinh(rs.getDate("NgaySinh"));
+
+                sinhviens.add(sv);
             }
         } catch (SQLException ex) {
             Logger.getLogger(SinhVienDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return subjects;
+        return sinhviens;
     }
 
     @Override

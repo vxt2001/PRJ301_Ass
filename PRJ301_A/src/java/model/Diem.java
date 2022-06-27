@@ -9,27 +9,33 @@ package model;
  * @author Admin
  */
 public class Diem {
-    SinhVien idSV;
-    MonHoc MaMH;
+    SinhVien SinhVien;
+    MonHoc MonHoc;
     int HocKy;
     int DiemLan1;
     int DiemLan2;
 
-    public SinhVien getIdSV() {
-        return idSV;
+    public SinhVien getSinhVien() {
+        return SinhVien;
     }
 
-    public void setIdSV(SinhVien idSV) {
-        this.idSV = idSV;
+    public void setSinhVien(SinhVien SinhVien) {
+        this.SinhVien = SinhVien;
     }
 
-    public MonHoc getMaMH() {
-        return MaMH;
+   
+
+ 
+
+    public MonHoc getMonHoc() {
+        return MonHoc;
     }
 
-    public void setMaMH(MonHoc MaMH) {
-        this.MaMH = MaMH;
+    public void setMonHoc(MonHoc MonHoc) {
+        this.MonHoc = MonHoc;
     }
+
+    
 
     
 
