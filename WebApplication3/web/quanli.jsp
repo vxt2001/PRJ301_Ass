@@ -13,15 +13,21 @@
     </head>
     <h1>FPT University Academic Portal</h1>
     <body>
-      <h2 ><a href="list">Home</a></h2>
+     <div style="background-color:#dbdbdb" class="col-md-12">
+            <h2 class="col-md-5" ><a href="list">Home</a>&nbsp;|&nbsp; 
+            
+                <b>Grade-book</b>
+            </h2>
+            
+        </div>
     </body>
     <table border="1">
             <thead>
                 <tr style="background-color:#0d6efd">
                    <th>Tên</th>
-                    <th>pt1</th>
-                    <th>pt2</th>
-                    <th>fe</th>
+                    <th>Progress test 1</th>
+                    <th>Progress test 2</th>
+                    <th>Final Exam</th>
                     <th>total</th>
                     <th></th>
                 </tr>

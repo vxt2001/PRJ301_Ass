@@ -15,9 +15,16 @@
     <h1>FPT University Academic Portal</h1>
     
     <body>
-        <h2 ><a href="">Home</a></h2>
+        <div style="background-color:#dbdbdb" class="col-md-12">
+            <h2 class="col-md-5" ><a href="">Home</a>&nbsp;|&nbsp; 
+            
+                <b>Grade-book</b>
+            </h2>
+            
+        </div>
+        
        <center> <form  action="list" method="POST">
-            class
+            Group
             :<select name="suid"> 
                 <c:forEach items="${requestScope.subjects}" var="su">
                     <option 
@@ -39,6 +46,7 @@
                     <td>Code</td>
                     <td>Name</td>
                     <td>Class</td>
+                    <td>Subject</td>
                   
                     
                 </tr>
@@ -48,10 +56,11 @@
                         <td>${s.simage}</td>
                         <td>${s.scode}</td>
                         <td><a href="diem">${s.sname}</a></td>
+                        <td></td>
                         <td>${s.subject.suname}</td>
                          <td><a href="edit?id=${s.sid}">Edit</a></td>
                     <td>  <a href="diem">Nhap diem</a></td>
-                     <td><input type="radio" name="diemdanh" value="absent" />absent</td>
+                     
                     </tr>  
                 </c:forEach>
                     
