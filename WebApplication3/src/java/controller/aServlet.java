@@ -5,6 +5,7 @@
 
 package controller;
 
+import dal.LopDBContext;
 import dal.SubjectDBContext;
 import dal.StudentDBContext;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import model.Lop;
 import model.Subject;
 import model.Student;
 
@@ -21,7 +23,7 @@ import model.Student;
  *
  * @author win
  */
-public class ListController extends HttpServlet {
+public class aServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -50,7 +52,7 @@ public class ListController extends HttpServlet {
         SubjectDBContext db = new SubjectDBContext();
         ArrayList<Subject> subjects = db.list();
         request.setAttribute("subjects", subjects);
-        request.getRequestDispatcher("list.jsp").forward(request, response);
+        request.getRequestDispatcher("list_1.jsp").forward(request, response);
         
     } 
 
@@ -65,15 +67,15 @@ public class ListController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         int suid = Integer.parseInt(request.getParameter("suid"));
-        StudentDBContext dbStu = new StudentDBContext();
-        ArrayList<Student> stus = dbStu.search(suid);
-        request.setAttribute("stus", stus);
+        LopDBContext dblop = new LopDBContext();
+        ArrayList<Lop> lops = dblop.search(suid);
+        request.setAttribute("lops", lops);
         
          SubjectDBContext dbSub = new SubjectDBContext();
         ArrayList<Subject> subjects = dbSub.list();
         request.setAttribute("subjects", subjects);
         request.setAttribute("suid", suid);
-        request.getRequestDispatcher("list.jsp").forward(request, response);
+        request.getRequestDispatcher("list_1.jsp").forward(request, response);
         
     }
 

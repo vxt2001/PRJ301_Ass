@@ -47,6 +47,7 @@ public class DiemController extends HttpServlet {
             ArrayList<Diem> diems = db.list();
             request.setAttribute("diems", diems);
             request.getRequestDispatcher("quanli.jsp").forward(request, response);
+            
         }
     }
 

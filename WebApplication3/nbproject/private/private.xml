@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/web/quanli.jsp</file>
-            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/controller/DiemController.java</file>
-            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/dal/StudentDBContext.java</file>
-            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/controller/ListController.java</file>
-            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/web/list.jsp</file>
-            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/model/Diem.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

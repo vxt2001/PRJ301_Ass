@@ -12,6 +12,10 @@
         <servlet-name>DiemController</servlet-name>
         <servlet-class>controller.DiemController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>aServlet</servlet-name>
+        <servlet-class>controller.aServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListController</servlet-name>
         <url-pattern>/list</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>DiemController</servlet-name>
         <url-pattern>/diem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>aServlet</servlet-name>
+        <url-pattern>/a</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

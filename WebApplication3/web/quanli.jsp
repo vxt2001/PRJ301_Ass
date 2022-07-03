@@ -21,19 +21,21 @@
             
         </div>
     </body>
-    <table border="1">
+       <C border="5px">MARK</C>
+       <div class="col-md-12">
+    <table border="1" class="col-md-16">
             <thead>
                 <tr style="background-color:#0d6efd">
                    <th>Tên</th>
-                    <th>Progress test 1</th>
-                    <th>Progress test 2</th>
-                    <th>Final Exam</th>
+                    <th>Progress test 1(20%)</th>
+                    <th>Progress test 2(20%)</th>
+                    <th>Final Exam(60%)</th>
                     <th>total</th>
                     <th></th>
                 </tr>
             </thead>
             <c:forEach items="${requestScope.diems}" var="d">
-               
+                
             <tbody>
                 <tr>
                     
@@ -47,29 +49,37 @@
                 </tr>
               
             </tbody> 
+           
+            </c:forEach>
+        </table>
+       <table border="1" class="col-md-6">
+            <thead>
+                <tr style="background-color:#0d6efd">
+                   <th>Tên</th>
+                    <th>Progress test 1(20%)</th>
+                    <th>Progress test 2(20%)</th>
+                    <th>Final Exam(60%)</th>
+                    <th>total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <c:forEach items="${requestScope.diems}" var="d">
+               
+            <tbody>
+                <tr>
+                    
+                    <td>${d.student.sname}</td>
+                    
+                    <td>${d.pt1}</td>
+                     <td>${d.pt2}</td>
+                     <td>${d.fe}</td>
+                     <td></td>
+                     <td><a href="edit?id=${s.sid}">Edit</a></td>
+                </tr>
+              
+            </tbody> 
             
             </c:forEach>
         </table>
-<table >
-                <tr style="background-color:#0d6efd">
-                    <td>pt1</td>
-                    <td>pt2</td>
-                    <td>fe</td>
-                  
-                  
-                    
-                </tr>
-                <c:forEach items="${requestScope.diems}" var="d">
-                    <tr>
-                        <td>${d.pt1}</td>
-                        <td>${d.pt2}</td>
-                        <td>${d.fe}</td>
-                        <td><a href="">${s.sname}</a></td>
-                        <td>${s.subject.suname}</td>
-                         <td><a href="edit?id=${s.sid}">Edit</a></td>
-                    
-                    </tr>  
-                </c:forEach>
-                    
-            </table>
+</div>
 </html>
