@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/dal/DBContext.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/web/list_1.jsp</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/controller/aServlet.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/dal/LopDBContext.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/dal/StudentDBContext.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/dal/DiemDBContext.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/controller/ListController.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/dal/SubjectDBContext.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/model/Student.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/model/Lop.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/src/java/model/Subject.java</file>
+            <file>file:/D:/PRJ_SE1632/PRJ301_Ass/PRJ301_Ass/WebApplication3/web/list.jsp</file>
+        </group>
     </open-files>
 </project-private>

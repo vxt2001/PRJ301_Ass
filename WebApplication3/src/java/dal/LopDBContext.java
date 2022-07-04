@@ -22,7 +22,7 @@ public class LopDBContext extends DBContext<Lop> {
     public ArrayList<Lop> search(int suid) {
         ArrayList<Lop> lops = new ArrayList<>();
         try {
-            String sql = "SELECT idLop,MaLop,su.suid,su.suname FROM Lop l INNER JOIN Subject su\n"
+            String sql = "SELECT l.idLop,l.MaLop,su.suid,su.suname FROM Lop l INNER JOIN Subject su\n"
                     + "                     ON l.suid = su.suid WHERE su.suid = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, suid);
@@ -39,7 +39,7 @@ public class LopDBContext extends DBContext<Lop> {
                 lops.add(l);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LopDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
         return lops;
     }

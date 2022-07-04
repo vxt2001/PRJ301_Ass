@@ -69,6 +69,7 @@ public class ListController extends HttpServlet {
         ArrayList<Student> stus = dbStu.search(suid);
         request.setAttribute("stus", stus);
         
+        
          SubjectDBContext dbSub = new SubjectDBContext();
         ArrayList<Subject> subjects = dbSub.list();
         request.setAttribute("subjects", subjects);
