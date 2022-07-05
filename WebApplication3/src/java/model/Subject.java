@@ -14,7 +14,7 @@ public class Subject {
      private int suid;
     private String suname;
     private ArrayList<Student> studs = new ArrayList<>();
-    private ArrayList<Lop> lops = new ArrayList<>();
+    private ArrayList<Lop> lopss = new ArrayList<>();
 
     public int getSuid() {
         return suid;
@@ -41,11 +41,11 @@ public class Subject {
     }
 
     public ArrayList<Lop> getLops() {
-        return lops;
+        return lopss;
     }
 
     public void setLops(ArrayList<Lop> lops) {
-        this.lops = lops;
+        this.lopss = lopss;
     }
 
    

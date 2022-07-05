@@ -14,8 +14,16 @@ public class Student {
     private String simage;
     private String scode;
     private String sname;
+    private Lop lop;
 
-   private Subject subject;
+    public Lop getLop() {
+        return lop;
+    }
+
+    public void setLop(Lop lop) {
+        this.lop = lop;
+    }
+    private Subject subject;
 
     public int getSid() {
         return sid;
@@ -56,7 +64,5 @@ public class Student {
     public void setSubject(Subject subject) {
         this.subject = subject;
     }
-
-    
 
 }

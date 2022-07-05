@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Lop;
 import model.Subject;
 import model.Student;
 
@@ -19,13 +20,13 @@ import model.Student;
  */
 public class StudentDBContext extends DBContext<Student> {
 
-    public ArrayList<Student> search(int did) {
+    public ArrayList<Student> search(int suid) {
         ArrayList<Student> stus = new ArrayList<>();
         try {
             String sql = "SELECT sid,simage,scode,sname,su.suid,su.suname FROM Student s INNER JOIN Subject su\n"
                     + "                     ON s.suid = su.suid WHERE su.suid = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setInt(1, did);
+            stm.setInt(1, suid);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Student s = new Student();
@@ -38,6 +39,34 @@ public class StudentDBContext extends DBContext<Student> {
                 su.setSuid(rs.getInt("suid"));
                 su.setSuname(rs.getString("suname"));
                 s.setSubject(su);
+                stus.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return stus;
+    }
+
+    public ArrayList<Student> searchlop(int idLop) {
+        ArrayList<Student> stus = new ArrayList<>();
+        try {
+            String sql = "SELECT sid,simage,scode,sname,l.idLop,l.maLop FROM Student s INNER JOIN Lop l\n"
+                    + "ON s.idLop = l.idLop WHERE l.idLop= ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, idLop);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Student s = new Student();
+
+                s.setSid(rs.getInt("sid"));
+                s.setSimage(rs.getString("simage"));
+                s.setScode(rs.getString("scode"));
+                s.setSname(rs.getString("sname"));
+                
+                Lop l = new Lop();
+                l.setIdLop(rs.getInt("idLop"));
+                l.setMaLop(rs.getString("maLop"));
+                s.setLop(l);
                 stus.add(s);
             }
         } catch (SQLException ex) {

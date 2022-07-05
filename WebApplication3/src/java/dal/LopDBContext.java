@@ -48,14 +48,14 @@ public class LopDBContext extends DBContext<Lop> {
     public ArrayList<Lop> list() {
         ArrayList<Lop> lops = new ArrayList<>();
         try {
-            String sql = "SELECT idLop,MaLop from Lop";
+            String sql = "SELECT idLop,maLop from Lop";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
 
                 Lop l = new Lop();
                 l.setIdLop(rs.getInt("idLop"));
-                l.setMaLop(rs.getString("MaLop"));
+                l.setMaLop(rs.getString("maLop"));
 
                 lops.add(l);
             }

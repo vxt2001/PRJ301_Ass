@@ -11,7 +11,7 @@ package model;
 public class Lop {
 
     private int idLop;
-    private String MaLop;
+    private String maLop;
     private Student student;
     private Subject subject;
 
@@ -24,12 +24,14 @@ public class Lop {
     }
 
     public String getMaLop() {
-        return MaLop;
+        return maLop;
     }
 
-    public void setMaLop(String MaLop) {
-        this.MaLop = MaLop;
+    public void setMaLop(String maLop) {
+        this.maLop = maLop;
     }
+
+    
 
     public Student getStudent() {
         return student;

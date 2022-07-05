@@ -19,17 +19,18 @@
             
         </div>
         
-       <center> <form  action="list" method="POST">
+       <center> <form  action="b" method="POST">
             Group
             :<select name="suid"> 
-                <c:forEach items="${requestScope.subjects}" var="su">
+                <c:forEach items="${requestScope.lops}" var="l">
                     <option 
-                        <c:if test="${su.suid eq requestScope.suid}">
+                        <c:if test="${l.idLop eq requestScope.idLop}">
                             selected="selected"
                         </c:if>
-                        value="${su.suid}">${su.suname}</option>
+                        value="${l.idLop}">${l.maLop}</option>
                 </c:forEach>
             </select>
+            
             <input type="submit" value="Search"/>
             
         </form>
