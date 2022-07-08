@@ -20,6 +20,10 @@
         <servlet-name>bServlet</servlet-name>
         <servlet-class>controller.bServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditDiem</servlet-name>
+        <servlet-class>controller.EditDiem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListController</servlet-name>
         <url-pattern>/list</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>bServlet</servlet-name>
         <url-pattern>/b</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditDiem</servlet-name>
+        <url-pattern>/editdiem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

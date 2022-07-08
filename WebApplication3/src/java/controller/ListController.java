@@ -73,6 +73,7 @@ public class ListController extends HttpServlet {
          SubjectDBContext dbSub = new SubjectDBContext();
         ArrayList<Subject> subjects = dbSub.list();
         request.setAttribute("subjects", subjects);
+        
         request.setAttribute("suid", suid);
         request.getRequestDispatcher("list.jsp").forward(request, response);
         

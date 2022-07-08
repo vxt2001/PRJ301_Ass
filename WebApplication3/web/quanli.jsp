@@ -29,6 +29,8 @@
                    <th>Tên</th>
                     <th>Progress test 1(20%)</th>
                     <th>Progress test 2(20%)</th>
+                    <th>w test 1(20%)</th>
+                    <th>w test 2(20%)</th>
                     <th>Final Exam(60%)</th>
                     <th>total</th>
                     <th></th>
@@ -43,9 +45,11 @@
                     
                     <td>${d.pt1}</td>
                      <td>${d.pt2}</td>
+                     <td>${d.ws1}</td>
+                     <td>${d.ws2}</td>
                      <td>${d.fe}</td>
                      <td></td>
-                     <td><a href="edit?id=${s.sid}">Edit</a></td>
+                     <td><a href="editdiem?id=${s.sid}">Edit</a></td>
                 </tr>
               
             </tbody> 

@@ -13,6 +13,8 @@ public class Diem {
     private Subject subject;
     private float pt1;
     private float pt2;
+    private float ws1;
+    private float ws2;
     private float fe;
 
     public Student getStudent() {
@@ -47,6 +49,23 @@ public class Diem {
         this.pt2 = pt2;
     }
 
+    public float getWs1() {
+        return ws1;
+    }
+
+    public void setWs1(float ws1) {
+        this.ws1 = ws1;
+    }
+
+    public float getWs2() {
+        return ws2;
+    }
+
+    public void setWs2(float ws2) {
+        this.ws2 = ws2;
+    }
+
+    
     public float getFe() {
         return fe;
     }

@@ -22,12 +22,12 @@
        <center> <form  action="b" method="POST">
             Group
             :<select name="suid"> 
-                <c:forEach items="${requestScope.lops}" var="l">
+                <c:forEach items="${requestScope.stus}" var="s">
                     <option 
-                        <c:if test="${l.idLop eq requestScope.idLop}">
+                        <c:if test="${s.sid eq requestScope.sid}">
                             selected="selected"
                         </c:if>
-                        value="${l.idLop}">${l.maLop}</option>
+                        value="${s.sid}">${s.sname}</option>
                 </c:forEach>
             </select>
             
@@ -35,7 +35,7 @@
             
         </form>
            </center>
-        <c:if test="${requestScope.stus ne null}">
+        <c:if test="${requestScope.diems ne null}">
             <table >
                 <tr style="background-color:#0d6efd">
                     <td>Id</td>

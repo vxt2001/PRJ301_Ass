@@ -110,7 +110,7 @@ public class EditController extends HttpServlet {
          
          request.setAttribute("student", s);
          request.setAttribute("action", "edited");
-          request.getRequestDispatcher("../view/emp/dml_confirmation.jsp").forward(request, response);
+          request.getRequestDispatcher("edit.jsp").forward(request, response);
     }
 
     /**
